@@ -9,7 +9,7 @@ export default {
             type: 'string'
         },
         {
-            name: 'mediumLight',
+            name: 'medLight',
             title: 'Medium Light',
             type: 'string'
         },

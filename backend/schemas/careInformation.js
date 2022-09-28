@@ -7,25 +7,31 @@ export default {
             name: 'light',
             title: 'Light',
             type: 'array',
-            of: [{
-                type: 'light'
-            }]
+            of: [
+                {
+                    type: 'light'
+                }
+            ]
         },
         {
             name: 'temp',
             title: 'Temperature',
             type: 'array',
-            of: [{
-                type: 'temp'
-            }]
+            of: [
+                {
+                    type: 'temp'
+                }
+            ]
         },
         {
             name: 'humidity',
             title: 'Humidity',
             type: 'array',
-            of: [{
-                type: 'humidity'
-            }]
+            of: [
+                {
+                    type: 'humidity'
+                }
+            ]
         },
     ]
 }

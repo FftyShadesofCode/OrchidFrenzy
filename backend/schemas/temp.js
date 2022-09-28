@@ -1,6 +1,6 @@
 export default {
     name: 'temp',
-    title: 'Temperature',
+    title: 'Temp',
     type: 'document',
     fields: [
         {
