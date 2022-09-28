@@ -6,6 +6,14 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        serif: [
+            'Zen Antique', 'serif'
+        ],
+        cursive: [
+            'Henny Penny', 'cursive'
+        ]
+      },
       margin: {
         320: '320px',
       },
