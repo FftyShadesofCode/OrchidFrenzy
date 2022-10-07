@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {GoogleLogin} from '@react-oauth/google'
 import { useNavigate } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
@@ -7,6 +7,25 @@ import logo from '../assets/logo.png'
 import { client } from '../client'
 
 const Login = () => {
+    function handleCallbackResponse(response) {
+        console.log("Encoded JWT ID token: " + response.credential)
+    }
+
+    useEffect(() => {
+        /* global google */
+        google.accounts.id.initialize({
+            client_id: '378677610801-d04oge73a9rrlro62hgb0ut3jghohamo.apps.googleusercontent.com',
+            callback: handleCallbackResponse
+        })
+        google.accounts.id.renderButton(
+            document.getElementById("signInDiv"),
+            {
+                theme: "outline",
+                size: "large"
+            }
+        )
+    }, [])
+
     const navigate = useNavigate();
     const responseGoogle = (response) => {
         localStorage.setItem('user', JSON.stringify(response.profileObj));
@@ -22,18 +41,18 @@ const Login = () => {
         });
     };
 
-    return (
+    return(
         <div className="flex justify-start items-center flex-col h-screen">
             <div className=" relative w-full h-full">
 
-                <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0    bg-blackOverlay">
+                <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay">
                     <div className="p-5">
                         <img src={logo} width="500px" alt="" />
                     </div>
 
                     <div className="shadow-2xl">
                         <GoogleLogin
-                            clientId={`${process.env.REACT_APP_GOOGLE_API_KEY}`}
+                            clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
                             render={(renderProps) => (
                                 <button
                                     type="button"
@@ -52,7 +71,7 @@ const Login = () => {
                 </div>
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default Login;

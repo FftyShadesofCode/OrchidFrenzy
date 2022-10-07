@@ -1,11 +1,13 @@
 {
   "scripts": {
-    "start": "npm-run-all --parallel backend frontend",
+    "start": "npm-run-all --parallel userauth backend frontend",
     "frontend": "cd frontend && npm run start",
     "backend": "cd backend && npm run start",
+    "userauth": "cd userauth && npm run start",
     "instfront": "cd frontend && npm i",
     "instback": "cd backend && npm i",
-    "inst": "npm-run-all --parallel instback instfront"
+    "instuserauth": "cd userauth && npm i",
+    "inst": "npm-run-all --parallel instuserauth instback instfront"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5"

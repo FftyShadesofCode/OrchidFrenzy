@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Zen Antique', serif;
+  }
+  :root {
+    --deep-pink: #B01E8F;
+    --light-pink: #ce77bb;
+    --main-green: #73C167;
+    --white-catt: #FFFFFD;
+    --medium-grey: #BEBEBE;
+    --overlay-black: rgba(0, 0 ,0 ,0.7);
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

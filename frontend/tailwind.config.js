@@ -49,23 +49,17 @@ module.exports = {
         350: '350px',
         620: '620px',
       },
-      textColor: {
+      colors: {
         lightGray: '#F1EFEE',
         primary: '#FAFAFA',
         secColor: '#efefef',
         navColor: '#BEBEBE',
         mainGreen: '#73C167',
         deepPink: '#B01E8F',
-        lightPink: '#ECECEC',
+        lightPink: '#CE77BB',
         whiteCatt: '#FFFFFD',
-      },
-      backgroundColor: {
         mainColor: '#FBF8F9',
         secondaryColor: '#F0F0F0',
-        mainGreen: '#73C167',
-        deepPink: '#B01E8F',
-        lightPink: '#ECECEC',
-        whiteCatt: '#FFFFFD',
         blackOverlay: 'rgba(0, 0 ,0 ,0.7)',
       },
       keyframes: {

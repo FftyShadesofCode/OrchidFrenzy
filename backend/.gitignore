@@ -1,0 +1,8 @@
+# Idea Folder
+.idea/
+
+# Git Folder
+.git/
+
+# Node Packages Folder
+node_modules/
