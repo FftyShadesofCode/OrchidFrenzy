@@ -1,4 +1,4 @@
-import { faHouseChimney, faInbox, faCalendarDays, faPersonChalkboard, faClipboardList, faChartLine, faEnvelope, faTrash } from '@fortawesome/free-solid-svg-icons'
+
 
 const MenuOptions = [
      {

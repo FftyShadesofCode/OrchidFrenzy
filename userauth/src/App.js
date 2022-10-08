@@ -5,7 +5,7 @@ import LandingPage from "./pages/LandingPage"
 
 function App() {
   return (
-    <div className='flex'>
+    <div className='flex min-h-screen bg-black'>
           <Router>
               <Sidebar>
                   <Routes>

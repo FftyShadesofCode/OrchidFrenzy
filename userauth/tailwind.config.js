@@ -56,11 +56,16 @@ module.exports = {
         navColor: '#BEBEBE',
         mainGreen: '#73C167',
         deepPink: '#B01E8F',
-        lightPink: '#ECECEC',
+        lightPink: '#ce77bb',
         whiteCatt: '#FFFFFD',
         mainColor: '#FBF8F9',
         secondaryColor: '#F0F0F0',
         blackOverlay: 'rgba(0, 0 ,0 ,0.7)',
+        greenOverlay: 'rgba(115, 193, 103, 0.8)',
+        deepPinkOverlay: 'rgba(176,30,143,0.9)',
+      },
+      backgroundImage: {
+        gradientRadial: 'radial-gradient(circle at 94.02% 88.03%, #73C167, transparent 50%)'
       },
       keyframes: {
         'slide-in': {
