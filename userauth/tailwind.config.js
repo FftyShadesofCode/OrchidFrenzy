@@ -47,7 +47,7 @@ module.exports = {
       minWidth: {
         210: '210px',
         350: '350px',
-        620: '620px',
+        620: '620px'
       },
       colors: {
         lightGray: '#F1EFEE',
@@ -63,6 +63,8 @@ module.exports = {
         blackOverlay: 'rgba(0, 0 ,0 ,0.7)',
         greenOverlay: 'rgba(115, 193, 103, 0.8)',
         deepPinkOverlay: 'rgba(176,30,143,0.9)',
+        lightPinkOverlay: 'rgba(206,119,187,0.3)',
+        whiteCattOverlay: 'rgba(255,255,253,0.2)'
       },
       backgroundImage: {
         gradientRadial: 'radial-gradient(circle at 94.02% 88.03%, #73C167, transparent 50%)'
