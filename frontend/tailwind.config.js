@@ -51,16 +51,16 @@ module.exports = {
       },
       colors: {
         lightGray: '#F1EFEE',
-        primary: '#FAFAFA',
-        secColor: '#efefef',
-        navColor: '#BEBEBE',
-        mainGreen: '#73C167',
-        deepPink: '#B01E8F',
-        lightPink: '#CE77BB',
-        whiteCatt: '#FFFFFD',
-        mainColor: '#FBF8F9',
-        secondaryColor: '#F0F0F0',
+        medGrey: '#FAFAFA',
+        primaryGrey: '#BEBEBE',
+        primaryGreen: '#73C167',
+        primaryDeepPink: '#B01E8F',
+        primaryLtPink: '#CE77BB',
+        primaryCatt: '#FFFFFD',
         blackOverlay: 'rgba(0, 0 ,0 ,0.7)',
+        deepPinkOverlay:'rgba(176,30,143,0.5)',
+        lightPinkOverlay: 'rgba(206,119,187,0.5)',
+        cattOverlay: 'rgba(255,255,253,0.5)'
       },
       keyframes: {
         'slide-in': {
