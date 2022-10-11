@@ -5,7 +5,7 @@ import {
     FontAwesomeIcon
 } from '@fortawesome/react-fontawesome'
 
-const SubHeader = ({ item, active, setActive }) => {
+const SubHeader = ({ item, active, showSidebar, closeSidebar }) => {
     const [subnav, setSubnav] = useState(false)
 
     const showSubnav = () => setSubnav(!subnav)
@@ -17,7 +17,7 @@ const SubHeader = ({ item, active, setActive }) => {
                   onClick={item.subNav && showSubnav}>
                 <div className='flex items-center'>
                     <FontAwesomeIcon icon={item.icon} className={`w-10 h-10 mr-6 text-secondaryGreen duration-200 ${active && "hidden"}`} />
-                    <h1 className={`ml-[16px] text-primaryCatt origin-left visible text-2xl text-center mr-10 duration-200 ${active && "hidden"}`}>{item.text}</h1>
+                    <h1 className={`ml-[16px] text-primaryCatt origin-left visible text-2xl text-center mr-10 duration-200`} onClick={closeSidebar}>{item.text}</h1>
                 </div>
                 <div className={`w-5 h-5 duration-200 ${active && "opacity-0"}`}>
                     {item.subNav && subnav

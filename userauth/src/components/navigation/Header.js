@@ -15,13 +15,16 @@ import Logo from '../../assets/Logo.png'
 const Sidebar = () => {
     const [active, setActive] = useState(false)
 
+    const showSidebar = () => setActive(!active)
+    const closeSidebar = () => setActive(!active)
+
     return (
         <div className={`transition-all duration-500 fixed m-4 rounded-lg shadow-md shadow-[0_10px_15px_10px_rgba(176,30,143,0.7)] border-r border-black border-md bg-primaryLtPink text-primaryCatt h-[96vh]`}>
             <div className={
                 `pt-8 relative duration-300 ${active ? "w-72" : "w-20" }`
             }>
                 <div className={`flex gap-x-4 items-center ${active ? 'pr-12' : 'pr-0'}`}>
-                    <FontAwesomeIcon icon={faAnglesRight} className={`absolute cursor-pointer right-4 top-3 w-7 h-auto text-primaryCatt ${active && "rotate-180"}`} onClick={() => setActive(!active)} />
+                    <FontAwesomeIcon icon={faAnglesRight} className={`absolute cursor-pointer right-4 top-3 w-7 h-auto text-primaryCatt ${active && "rotate-180"}`} onClick={showSidebar} />
                     <img
                         src={Logo}
                         className={`cursor-pointer duration-500 w-[125px] h-auto ${active && "rotate-[360deg]" }`}
@@ -51,7 +54,7 @@ const Sidebar = () => {
                 <aside className='flex content-evenly text-primaryCatt'>
                     <nav>
                         {links.map((item, index) => {
-                            return <SubHeader item={item} key={index} />;
+                            return <SubHeader item={item} key={index} onClick={closeSidebar} />;
                         })}
                     </nav>
                 </aside>
