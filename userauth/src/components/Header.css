@@ -1,0 +1,128 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    gap-x: 4rem;
+    width: 20rem;
+    height: 97vh;
+    margin: 1rem;
+    top: 0;
+    left: 0;
+    background: var(--lt-pink-overlay);
+    box-shadow: 0 0 35px 5px var(--lt-pink-overlay);
+    color: var(--primary-catt);
+    border-radius: 1rem;
+    border: 2px solid white;
+}
+
+.header-min {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    gap-x: 4rem;
+    width: 6rem;
+    height: 97vh;
+    margin: 1rem;
+    top: 0;
+    left: 0;
+    border-radius: 1rem;
+    border: 1px solid white;
+    box-shadow: 0 0 35px 5px var(--lt-pink-overlay);
+    align-items: center;
+    background: var(--lt-pink-overlay);
+    color: var(--primary-catt);
+}
+
+.header .logo {
+    position: relative;
+    width: auto;
+    text-align: center;
+    margin-top: 2rem;
+    text-decoration: none;
+    color: var(--primary-catt);
+}
+
+.header .logo-min {
+    position: relative;
+    display: flex;
+    width: 3rem;
+    transform: scale(.05);
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary-catt);
+}
+
+.header .logo .menu-bars {
+    cursor: pointer;
+    top: 0;
+    width: 2.5rem;
+    height: auto;
+    transition: all ease-in-out 300ms;
+}
+
+.header .logo-min .menu-bars-min {
+    cursor: pointer;
+    right: 1rem;
+    top: 1rem;
+    width: 5rem;
+    height: auto;
+}
+
+.header .logo a .logo-image {
+    max-width: 18rem;
+    height: auto;
+}
+
+.header .logo a .logo-image-min {
+    max-width: 15%;
+}
+
+.logo h3 {
+    text-decoration: none;
+    color: var(--primary-catt);
+    font-size: 2rem;
+}
+
+.logo h3 .leaf-text {
+    color: var(--leaf-green);
+    font-size: 3rem ;
+}
+
+.logo .logo-text-min {
+    display: none;
+}
+
+.search-container {
+    position: relative;
+    margin: 1rem;
+}
+
+.search-container label {
+    position: absolute;
+    inset-y: 0;
+    left: 0;
+    display: flex;
+    justify-items: center;
+}
+
+.search-container label .search-icon {
+    width: 2rem;
+    height: auto;
+    list-style: none;
+    color: var(--primary-deep-pink);
+}
+
+.search-container label .search-icon:hover {
+
+}
+
+.search-container label .search-icon-min {
+    color: var(--primary-catt);
+    transform: scale(.5);
+}
+
+nav .header-navigation {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}

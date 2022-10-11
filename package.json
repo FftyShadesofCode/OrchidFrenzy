@@ -3,7 +3,7 @@
     "start": "npm-run-all --parallel userauth backend frontend",
     "frontend": "cd frontend && npm run start",
     "backend": "cd backend && npm run start",
-    "userauth": "cd userauth && npm run dev",
+    "userauth": "cd userauth && npm start",
     "instfront": "cd frontend && npm i",
     "instback": "cd backend && npm i",
     "instuserauth": "cd userauth && npm i",
