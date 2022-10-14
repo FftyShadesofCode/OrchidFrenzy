@@ -1,19 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
-import Login from './components/Login'
+import Login from './components/Login/Login'
 import Home from './container/Home'
 
 import './App.css';
 
 const App = () => {
-    const navigate = useNavigate();
+    const [token, setToken] = useState()
 
-    useEffect(() => {
-        const User = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
-
-        if (!User) navigate('/login');
-    }, [navigate]);
+    if(!token) {
+        return <Login setToken={setToken} />
+    }
   return(
       <Routes>
         <Route path='login' element={<Login />} />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { GoogleLogin, GoogleLogout } from 'react-google-login'
 import { gapi } from 'gapi-script'
 
-export default function Login() {
+export default function GoogleLogger() {
     const [ profile, setProfile ] = useState([])
     const clientId = '378677610801-d04oge73a9rrlro62hgb0ut3jghohamo.apps.googleusercontent.com'
 
@@ -38,16 +38,20 @@ export default function Login() {
                     <p>Name: {profile.name}</p>
                     <p>Email Address: {profile.email}</p>
 
-                    <GoogleLogout clientId={clientId} buttonText='Log Out' onLogoutSuccess={logout} />
+                    <GoogleLogin
+                        clientId={clientId}
+                        buttonText='Sign in with Google'
+                        onSuccess={onSuccess}
+                        onFailure={onFailure}
+                        cookiePolicy={'single_host_origin'}
+                        isSignedIn={true}
+                    />
                 </div>
             ) : (
-                <GoogleLogin
+                <GoogleLogout
                     clientId={clientId}
-                    buttonText='Sign in with Google'
-                    onSuccess={onSuccess}
-                    onFailure={onFailure}
-                    cookiePolicy={'single_host_origin'}
-                    isSignedIn={true}
+                    buttonText='Log Out'
+                    onLogoutSuccess={logout}
                 />
             )}
         </div>
