@@ -1,13 +1,15 @@
 import React from 'react'
 
 import GoogleLogger from './GoogleLogger'
+import EmailRegistration from './EmailRegistration'
 import EmailLogin from './EmailLogin'
 
 export default function Login() {
     return (
         <div>
-            <GoogleLogger />
-            <EmailLogin />
+            {/*<GoogleLogger />*/}
+            <EmailRegistration />
+            {/*<EmailLogin />*/}
         </div>
-    );
-};
+    )
+}

@@ -50,17 +50,24 @@ module.exports = {
         620: '620px',
       },
       colors: {
-        lightGray: '#F1EFEE',
+        lightGrey: '#F1EFEE',
         medGrey: '#FAFAFA',
         primaryGrey: '#BEBEBE',
         primaryGreen: '#73C167',
-        primaryDeepPink: '#B01E8F',
-        primaryLtPink: '#CE77BB',
+        secondaryGreen: '#355E3B',
+        leafGreen: '#008000',
+        seedlingGreen: '#4CBB17',
         primaryCatt: '#FFFFFD',
-        blackOverlay: 'rgba(0, 0 ,0 ,0.7)',
-        deepPinkOverlay:'rgba(176,30,143,0.5)',
-        lightPinkOverlay: 'rgba(206,119,187,0.5)',
-        cattOverlay: 'rgba(255,255,253,0.5)'
+        primaryDeepPink: '#B01E9F',
+        primaryLtPink: '#CE77BB',
+        blackOverlay: 'rgba(0, 0, 0, 0.7)',
+        deepPinkOverlay: 'rgba(176, 30, 143, 0.5)',
+        ltPinkOverlay: 'rgba(206, 119, 187, 0.6)',
+        greenOverlay: 'rgba(0, 128, 0, 0.6)',
+        cattOverlay: 'rgba(255, 255, 253, 0.5)',
+      },
+      backgroundImage: {
+        'cTenebrosa': "url('./assets/Cattleyatenebrosa.jpg')"
       },
       keyframes: {
         'slide-in': {

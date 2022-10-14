@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+    * {
+        overflow: hidden;
+    }
     body {
         font-family: 'Zen Antique', serif;
     }

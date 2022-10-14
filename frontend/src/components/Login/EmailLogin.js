@@ -1,25 +1,40 @@
 import React from 'react'
 
-export default function EmailLogin() {
+const EmailLogin = () => {
     return (
-        <div className='flex flex-column items-center'>
-            <h1>Login</h1>
-            <form>
-                <label>
-                    <p>Email Address:</p>
-                    <input type='text'/>
-                </label>
+        <div className={`bg-cTenebrosa bg-cover bg-center w-screen h-screen text-primaryCatt`}>
+            <div className={`bg-black/80 w-full h-screen `}>
 
-                <label>
-                    <p>Password:</p>
-                    <input type='text' />
-                </label>
+                <div className={`flex flex-col justify-center h-screen`}>
+                    <center>
+                        <h1 className={`text-[30px]`}>Login</h1>
+                    </center>
 
-                <div>
-                    <button type='submit'>Submit</button>
+                    <center>
+                        <input type='text' placeholder='Enter Email Address' className={`w-96  my-4 p-2 px-3 bg-transparent border-2 border-greenOverlay rounded-lg outline-none focus:border-ltPinkOverlay`} />
+                    </center>
+
+                    <center>
+                        <input type='password' placeholder='Enter Password' className={`w-96 my-4 p-2 px-3 bg-transparent border-2 border-greenOverlay rounded-lg outline-none focus:border-ltPinkOverlay`} />
+                    </center>
+
+                    <center>
+                        <a href='#'>Forgot Password?</a>
+                    </center>
+
+                    <center>
+                        <a href='#'>Create An Account</a>
+                    </center>
+
+                    <center>
+                        <button type='submit'>Submit</button>
+                    </center>
                 </div>
 
-            </form>
+            </div>
+
         </div>
-    );
-};
+    )
+}
+
+export default EmailLogin
