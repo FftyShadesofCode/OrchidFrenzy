@@ -7,7 +7,7 @@ const EmailLogin = () => {
 
                 <div className={`flex flex-col justify-center h-screen`}>
                     <center>
-                        <h1 className={`text-[30px]`}>Login</h1>
+                        <h1 className={`text-[50px]`}>Login</h1>
                     </center>
 
                     <center>
