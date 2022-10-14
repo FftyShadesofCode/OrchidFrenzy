@@ -11,6 +11,7 @@ import {
     FontAwesomeIcon
 } from '@fortawesome/react-fontawesome'
 import Logo from '../../assets/Logo.png'
+
 const Sidebar = () => {
     const [active, setActive] = useState(false)
 
@@ -48,7 +49,7 @@ const Sidebar = () => {
                 <aside className='flex content-evenly text-primaryCatt' onClick={toggleSidebar}>
                     <nav>
                         {links.map((item, index) => {
-                            return <SubHeader item={item} key={index} />;
+                            return <SubHeader item={item} key={index} active={active} />;
                         })}
                     </nav>
                 </aside>

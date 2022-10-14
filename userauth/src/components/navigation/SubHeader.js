@@ -12,14 +12,14 @@ const SubHeader = ({ item, active, toggleSidebar }) => {
 
 
     return (
-        <div onClick={toggleSidebar}>
+        <div>
             <Link className='flex justify-between items-center text-primaryCatt text-xl p-5 list-none h-[60px] no-underline hover:bg-gradient-to-l from-secondaryGreen to-transparent hover:cursor-pointer mt-6' to={item.path}
                   onClick={item.subNav && showSubnav}>
                 <div className='flex items-center'>
                     <FontAwesomeIcon icon={item.icon} className={`w-10 h-10 mr-6 text-secondaryGreen`} />
-                    <h1 className={`ml-[16px] text-primaryCatt origin-left text-2xl text-center mr-10 duration-200 ${!active && 'hidden'}`}>{item.text}</h1>
+                    <h1 className={`ml-[16px] text-primaryCatt origin-left text-2xl text-center mr-10 duration-200 ${!active && "hidden"}`} onClick={toggleSidebar}>{item.text}</h1>
                 </div>
-                <div className={`w-5 h-5 duration-200 ${active && "opacity-0"}`}>
+                <div className={`w-5 h-5 duration-200 ${!active && "hidden"}`}>
                     {item.subNav && subnav
                         ? item.iconOpened
                         : item.subNav
