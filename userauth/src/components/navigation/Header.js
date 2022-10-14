@@ -11,7 +11,6 @@ import {
     FontAwesomeIcon
 } from '@fortawesome/react-fontawesome'
 import Logo from '../../assets/Logo.png'
-
 const Sidebar = () => {
     const [active, setActive] = useState(false)
 
@@ -24,7 +23,7 @@ const Sidebar = () => {
                 `pt-8 relative duration-300 ${active ? "w-72" : "w-20" }`
             }>
                 <div className={`flex gap-x-4 items-center ${active ? 'pr-12' : 'pr-0'}`}>
-                    <FontAwesomeIcon icon={faAnglesRight} className={`absolute cursor-pointer right-4 top-3 w-7 h-auto text-primaryCatt ${active && "rotate-180"}`} onClick={showSidebar} />
+                    <FontAwesomeIcon icon={faAnglesRight} className={`absolute cursor-pointer right-4 top-3 w-7 h-auto text-primaryCatt ${active && "rotate-180"} ${active ? 'right-4' : '-right-10'}`} onClick={showSidebar} />
                     <img
                         src={Logo}
                         className={`cursor-pointer duration-500 w-[125px] h-auto ${active && "rotate-[360deg]" }`}

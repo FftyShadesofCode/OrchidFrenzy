@@ -7,7 +7,9 @@ function App() {
     return (
         <div className='flex min-h-screen bg-black'>
             <Router>
-                <Sidebar>
+                <Sidebar
+
+                >
                     <Routes>
                         <Route path='/' element={<Home />} />
                     </Routes>

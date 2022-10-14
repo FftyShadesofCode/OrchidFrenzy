@@ -1,77 +1,55 @@
-import React, { useEffect } from 'react'
-import {GoogleLogin} from '@react-oauth/google'
-import { useNavigate } from 'react-router-dom'
-import { FcGoogle } from 'react-icons/fc'
-import logo from '../assets/logo.png'
+import React, { useState, useEffect } from 'react'
+import { GoogleLogin, GoogleLogout } from 'react-google-login'
+import { gapi } from 'gapi-script'
 
-import { client } from '../client'
-
-const Login = () => {
-    function handleCallbackResponse(response) {
-        console.log("Encoded JWT ID token: " + response.credential)
-    }
+export default function Login() {
+    const [ profile, setProfile ] = useState([])
+    const clientId = '378677610801-d04oge73a9rrlro62hgb0ut3jghohamo.apps.googleusercontent.com'
 
     useEffect(() => {
-        /* global google */
-        google.accounts.id.initialize({
-            client_id: '378677610801-d04oge73a9rrlro62hgb0ut3jghohamo.apps.googleusercontent.com',
-            callback: handleCallbackResponse
-        })
-        google.accounts.id.renderButton(
-            document.getElementById("signInDiv"),
-            {
-                theme: "outline",
-                size: "large"
-            }
-        )
-    }, [])
+        const initClient = () => {
+            gapi.client.init({
+                clientId: clientId,
+                scope: ''
+            })
+        }
+        gapi.load('client:auth2', initClient)
+    })
 
-    const navigate = useNavigate();
-    const responseGoogle = (response) => {
-        localStorage.setItem('user', JSON.stringify(response.profileObj));
-        const { name, googleId, imageUrl } = response.profileObj;
-        const doc = {
-            _id: googleId,
-            _type: 'user',
-            userName: name,
-            image: imageUrl,
-        };
-        client.createIfNotExists(doc).then(() => {
-            navigate('/', { replace: true });
-        });
-    };
+    const onSuccess = (res) => {
+        setProfile(res.profileObj)
+    }
 
-    return(
-        <div className="flex justify-start items-center flex-col h-screen">
-            <div className=" relative w-full h-full">
+    const onFailure = (err) => {
+        console.log('failed:', err)
+    }
 
-                <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay">
-                    <div className="p-5">
-                        <img src={logo} width="500px" alt="" />
-                    </div>
+    const logout = () => {
+        setProfile(null)
+    }
 
-                    <div className="shadow-2xl">
-                        <GoogleLogin
-                            clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
-                            render={(renderProps) => (
-                                <button
-                                    type="button"
-                                    className="bg-mainColor flex justify-center items-center p-3 rounded-lg cursor-pointer outline-none"
-                                    onClick={renderProps.onClick}
-                                    disabled={renderProps.disabled}
-                                >
-                                    <FcGoogle className="mr-4" /> Sign in with google
-                                </button>
-                            )}
-                            onSuccess={responseGoogle}
-                            onFailure={responseGoogle}
-                            cookiePolicy="single_host_origin"
-                        />
-                    </div>
+    return (
+        <div>
+            <h2>Login</h2>
+            {profile ? (
+                <div>
+                    <img src={profile.imageUrl} alt='user avatar' />
+                    <h3>User Logged In</h3>
+                    <p>Name: {profile.name}</p>
+                    <p>Email Address: {profile.email}</p>
+
+                    <GoogleLogout clientId={clientId} buttonText='Log Out' onLogoutSuccess={logout} />
                 </div>
-            </div>
+            ) : (
+                <GoogleLogin
+                    clientId={clientId}
+                    buttonText='Sign in with Google'
+                    onSuccess={onSuccess}
+                    onFailure={onFailure}
+                    cookiePolicy={'single_host_origin'}
+                    isSignedIn={true}
+                />
+            )}
         </div>
-    )
-}
-
-export default Login;
+    );
+};
