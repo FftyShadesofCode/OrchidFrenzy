@@ -1,33 +1,35 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
-import Account from '../accounts/account'
 import { UserAuth } from '../../utils/AuthContext'
 import { signInWithGoogle, signInWithFacebook } from '../../utils/firebase'
 
 import { FcGoogle } from 'react-icons/fc'
 import { AiFillFacebook } from 'react-icons/ai'
 
+import Account from '../accounts/account'
 
-const Login = () => {
+const Register = () => {
 
     // Email Sign-In
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
+    const { createUser } = UserAuth()
     const navigate = useNavigate()
-    const { signIn } = UserAuth()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setError('')
         try{
-            await signIn(email, password)
+            await createUser(email, password)
             navigate({Account})
         } catch (e) {
             setError(e.message)
         }
     }
+
+    // Google Sign-In
 
     return (
         <div className={`bg-cTenebrosa bg-cover bg-center w-screen h-screen text-white`}>
@@ -41,7 +43,7 @@ const Login = () => {
                         onSubmit={handleSubmit}
                     >
                         <center>
-                            <h1 className={`text-[50px]`}>Login</h1>
+                            <h1 className={`text-[50px]`}>Register</h1>
                         </center>
 
                         <center>
@@ -62,31 +64,32 @@ const Login = () => {
                                 className={`w-96 p-2 px-3 text-black bg-white border-2 border-violet rounded-lg outline-none focus:border-ultramarine placeholder-blackOverlay`}
                                 required
                             />
+                            <input
+                                onChange={(e) => setPassword(e.target.value)}
+                                type='password'
+                                placeholder='Confirm Password'
+                                className={`w-96 p-2 px-3 text-black bg-white border-2 border-violet rounded-lg outline-none focus:border-ultramarine placeholder-blackOverlay`}
+                                required
+                            />
                         </center>
 
                         <center className={`no-underline`}>
-                            <Link
-                                to=''
-                                className={`mx-4 text-white hover:text-aqua duration-300`}
-                            >
-                                Forgot Password?
-                            </Link>
 
                             <p className={`py-2 text-white`}>
-                                Don't have an account yet?
-                            <Link
-                                to='/register'
-                                className={`mx-4 text-black text-xl underline hover:text-aqua duration-300`}
-                            >
-                                Register
-                            </Link>
+                                Already have an account?
+                                <Link
+                                    to='/login'
+                                    className={`mx-4 text-black text-xl underline hover:text-aqua duration-300`}
+                                >
+                                    Sign In
+                                </Link>
                             </p>
                         </center>
 
                         <center className={`my-6`}>
                             <button
                                 type='submit'
-                                className={`text-[24px] border-darkPurple border-2 bg-primaryPurple px-4 py-2 rounded-md hover:border-aqua hover:bg-teal hover:text-white duration-300`}
+                                className={`text-[24px] border-darkPurple border-2 bg-primaryPurple px-4 py-2 rounded-md hover:border-aqua hover:bg-teal hover:text-white duration-300 hover:bg-gray-900 hover:border-gray-400 hover:shadow-md hover:shadow-gray-200 hover:shadow-inner`}
                             >
                                 Submit
                             </button>
@@ -101,15 +104,15 @@ const Login = () => {
                         >
                             <FcGoogle className={`text-2xl`} />
 
-                            Sign in with Google
+                            Sign up with Google
                         </button>
 
                         <button
                             onClick={signInWithFacebook}
-                            className={`bg-gray-500 p-4 w-full font-medium rounded-lg flex align-middle gap-2 border-2 border-gray-700 shadow-inner shadow-md shadow-gray-700 hover:bg-gray-900 hover:border-gray-400 hover:shadow-md hover:shadow-gray-200 hover:shadow-inner`}
+                            className={`bg-gray-500 p-4 w-full font-medium rounded-lg flex align-middle gap-2 border-2 border-gray-700 shadow-inner shadow-md shadow-gray-700`}
                         >
                             <AiFillFacebook className={`text-facebook text-2xl`} />
-                            Sign in with Facebook
+                            Sign up with Facebook
                         </button>
 
                     </div>
@@ -122,4 +125,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default Register

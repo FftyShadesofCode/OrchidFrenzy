@@ -35,8 +35,8 @@ export const links = [
         path: '/messaging',
         text: 'Messaging',
         icon: faInbox,
-        iconClosed: <FontAwesomeIcon icon={faLeaf} className={`w-5 h-5 text-leafGreen`} />,
-        iconOpened: <FontAwesomeIcon icon={faSeedling} className={`w-5 h-5 text-seedlingGreen`} />,
+        iconClosed: <FontAwesomeIcon icon={faLeaf} className={`w-5 h-5 text-white`} />,
+        iconOpened: <FontAwesomeIcon icon={faSeedling} className={`w-5 h-5 text-white`} />,
         subNav: [
             {
                 id: 1,
@@ -59,8 +59,8 @@ export const links = [
         path: '/contacts',
         text: 'Contacts',
         icon: faAddressBook,
-        iconClosed: <FontAwesomeIcon icon={faLeaf} className={`w-5 h-5 text-leafGreen`} />,
-        iconOpened: <FontAwesomeIcon icon={faSeedling} className={`w-5 h-5 text-seedlingGreen`} />,
+        iconClosed: <FontAwesomeIcon icon={faLeaf} className={`w-5 h-5 text-white`} />,
+        iconOpened: <FontAwesomeIcon icon={faSeedling} className={`w-5 h-5 text-white`} />,
         subNav: [
             {
                 id: 1,
