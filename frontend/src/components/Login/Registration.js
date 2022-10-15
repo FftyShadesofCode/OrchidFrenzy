@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-export default function EmailRegistration() {
+export default function Registration() {
     return (
         <div>
 

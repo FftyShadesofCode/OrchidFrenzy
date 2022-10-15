@@ -23,15 +23,15 @@ const SubHeader = ({ item, active, toggleSidebar }) => {
                     {item.subNav && subnav
                         ? item.iconOpened
                         : item.subNav
-                        ? item.iconClosed
-                        : null}
+                            ? item.iconClosed
+                            : null}
                 </div>
             </Link>
             {subnav &&
                 item.subNav.map((item, index) => {
                     return (
-                        <Link to={item.path} key={index} className={`bg-deepPinkOverlay min-h-[60px] px-16 flex items-center no-underline text-primaryCatt text-xl hover:bg-greenOverlay opacity-1 duration-200 ${active && "opacity-0"}`}>
-                            <FontAwesomeIcon icon={item.icon} className={`w-5 h-5 duration-200 ${active && "opacity-0"}`} />
+                        <Link to={item.path} key={index} className={`bg-deepPinkOverlay min-h-[60px] px-16 flex items-center no-underline text-primaryCatt text-xl hover:bg-greenOverlay opacity-1 duration-200`}>
+                            <FontAwesomeIcon icon={item.icon} className={`w-5 h-5 duration-200 ${active && "opacity-1"}`} />
                             <span className={`ml-[16px] text-primaryCatt origin-left font-medium text-2xl text-center duration-200 ${!subnav && "scale-0"}`}>{item.text}</span>
                         </Link>
                     );
