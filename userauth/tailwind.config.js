@@ -6,6 +6,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        aqua: '#00FFFF',
+        teal: '#008080',
+        blueGreen : '#088F8F',
+        sapphireBlue: '#0F52BA',
+        ultramarine: '#0437F2',
+        indigo: '#3F00FF',
+        cobaltBlue: '#0047AB',
+        darkBlue: '#00008B',
+        iris: '#5D3FD3',
+        violet: '#7F00FF',
+        primaryPurple: '#800080',
+        darkPurple: '#120043',
         lightGrey: '#F1EFEE',
         medGrey: '#FAFAFA',
         primaryGrey: '#BEBEBE',
