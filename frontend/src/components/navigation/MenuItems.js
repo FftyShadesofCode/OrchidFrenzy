@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
+import { BsChevronRight } from 'react-icons/bs'
+
 import Dropdown from './dropdown'
 
 const MenuItems = ({ items, depthLevel }) => {
@@ -30,15 +32,28 @@ const MenuItems = ({ items, depthLevel }) => {
         window.innerWidth > 960 && setDropdown(false)
     }
 
+    const closeDropdown = () => {
+        dropdown && setDropdown(false)
+    }
+
     return (
-        <li ref={ref} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className={`mx-6`} >
+        <li ref={ref} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={closeDropdown} className={`mx-6 relative`} >
             {items.submenu ? (
                 <>
-                    <button type='button' aria-expanded={dropdown ? 'true' : 'false'} onClick={() => setDropdown((prev) => !prev)}>
-                        {items.label} {' '}
-                        {depthLevel > 0 ? <span> {items.icon} </span> : <span className={``} />}
+                    <button type='button' aria-expanded={dropdown ? 'true' : 'false'} onClick={() => setDropdown((prev) => !prev)} className={`flex items-center cursor-pointer w-full`}>
+                        {window.innerWidth < 960 && depthLevel === 0 ? (
+                            items.label
+                        ) : (
+                            <Link to={items.path}>{items.label}</Link>
+                        )}
+
+                        {depthLevel > 0 &&
+                            window.innerWidth < 960 ? null : depthLevel > 0 && window.innerWidth > 960 ? (
+                                <span className={`ml-[3px]`}> <BsChevronRight /> </span> ) : (
+                                    <span className={`inline-block`} />
+                                )}
                     </button>
-                    <Dropdown submenus={items.submenu} depthLevel={depthLevel} />
+                    <Dropdown submenus={items.submenu} depthLevel={depthLevel} dropdown={dropdown} />
                 </>
             ) : (
                 <Link to={items.path}>{items.label}</Link>

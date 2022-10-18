@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import { navLinks } from './navItems'
 import MenuItems from './MenuItems'
 
-import { FaBars } from 'react-icons/fa'
 import Logo from '../../assets/logo-solid.png'
 
 export default function TopNav() {
@@ -18,12 +17,12 @@ export default function TopNav() {
                     <img src={Logo} alt='' className={`h-full w-full p-2`} />
                 </Link>
 
-                <div className={`flex list-none`}>
+                <ul className={`flex list-none no-underline text-xl items-center flex-wrap`}>
                     {navLinks.map((item) => {
                         const depthLevel = 0
                         return <MenuItems items={item} key={item.label} depthLevel={depthLevel} className={``} />
                     })}
-                </div>
+                </ul>
 
             </div>
         </nav>
