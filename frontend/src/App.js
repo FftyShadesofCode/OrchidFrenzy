@@ -11,7 +11,7 @@ import './App.css'
 const App = () => {
 
   return(
-      <div>
+      <div className={`bg-black w-full w-full`}>
           <Topnav />
           <Routes>
             <Route element={<Home />} path='/' exact />
