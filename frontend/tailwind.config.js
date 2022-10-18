@@ -70,21 +70,7 @@ module.exports = {
         ultramarineOverlay: 'rgba(4, 55, 242, 0.5)',
         purpleOverlay: 'rgba(128, 0, 128, 0.6)',
         violetOverlay: 'rgba(127, 0, 255, 0.6)',
-        cattOverlay: 'rgba(255, 255, 253, 0.5)',
-        lightGrey: '#F1EFEE',
-        medGrey: '#FAFAFA',
-        primaryGrey: '#BEBEBE',
-        primaryGreen: '#73C167',
-        secondaryGreen: '#355E3B',
-        leafGreen: '#008000',
-        seedlingGreen: '#4CBB17',
-        primaryDeepPink: '#B01E9F',
-        primaryLtPink: '#CE77BB',
-        blackOverlay: 'rgba(0, 0, 0, 0.7)',
-        deepPinkOverlay: 'rgba(176, 30, 143, 0.5)',
-        ltPinkOverlay: 'rgba(206, 119, 187, 0.6)',
-        greenOverlay: 'rgba(0, 128, 0, 0.6)',
-        cattOverlay: 'rgba(255, 255, 253, 0.5)',
+        cattOverlay: 'rgba(255, 255, 253, 0.5)'
       },
       backgroundImage: {
         'cTenebrosa': "url('./assets/Cattleyatenebrosa.jpg')"
