@@ -43,40 +43,39 @@ const Login = () => {
           </div>
           <div className='flex items-center justify-center p-6 sm:p-12 md:w-1/2'>
             <div className='w-full'>
-              <h1 className='mb-4 text-2xl font-bold text-center text-gray-700'>
-                Log In
+              <h1 className='mb-8 text-2xl font-bold text-center text-purple-700'>
+                Log In to Your Account
               </h1>
               <div>
                 {/* <label className='block text-sm'>Email</label> */}
                 <input
                   type='email'
-                  className='w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600'
+                  className='w-full mb-8 px-4 py-2 text-sm border rounded-md focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-900'
                   placeholder='Email'
                 />
               </div>
-              <br />
               <div>
                 {/* <label className='block mt-4 text-sm'>Password</label> */}
                 <input
-                  className='w-full px-4 py-2 text-sm border rounded-md focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-600'
+                  className='w-full px-4 py-2 text-sm border rounded-md focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-900'
                   placeholder='Password'
                   type='password'
                 />
               </div>
               <p className='mt-4'>
                 <a
-                  className='text-sm text-blue-600 hover:underline'
+                  className='text-md text-purple-900 hover:underline'
                   href='./forgot-password.html'
                 >
                   Forgot your password?
                 </a>
               </p>
-              <button
-                className='block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue'
-                href='#'
-              >
-                Log in
-              </button>
+              <Button
+                text='Log In'
+                type='button'
+                buttonStyle='square'
+                handleClick={() => console.log("Clicked!")}
+              />
               <hr className='my-8' />
               <div className={`flex flex-col justify-center gap-4 mt-10`}>
                 <button
@@ -93,6 +92,18 @@ const Login = () => {
                   <AiFillFacebook className={`text-facebook text-2xl`} />
                   Sign in with Facebook
                 </button>
+                <br />
+                <p
+                  className={`py-2 text-sm text-purple-900 flex justify-center`}
+                >
+                  Don't have an account yet?
+                  <Link
+                    to='/register'
+                    className={`mx-4 text-purple-900 text-sm hover:underline duration-300`}
+                  >
+                    Sign Up
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
