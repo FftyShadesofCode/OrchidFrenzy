@@ -30,95 +30,83 @@ const Login = () => {
   };
 
   return (
-      <div
-          className={`bg-cTenebrosa bg-cover bg-center w-screen h-screen text-white`}
-      >
-        <div className={`bg-black/50 w-full h-screen `}>
-          <div className={`flex flex-col justify-center items-center h-screen`}>
-            <form
-                action='submit'
-                className={`space-y-5 bg-tealOverlay border-2 border-irisOverlay shadow-md shadow-[0_0_15px_10px_rgba(128,0,128,0.5)] w-fit p-8 rounded-lg`}
-                onSubmit={handleSubmit}
-            >
-              <center>
-                <h1 className={`text-[50px]`}>Login</h1>
-              </center>
-
-              <center>
-                <input
-                    onChange={(e) => setEmail(e.target.value)}
-                    type='text'
-                    placeholder='Enter Email Address'
-                    className={`w-96 p-2 px-3 text-black bg-white border-2 border-violet rounded-lg outline-none focus:border-ultramarine placeholder-blackOverlay`}
-                    required
-                />
-              </center>
-
-              <center>
-                <input
-                    onChange={(e) => setPassword(e.target.value)}
-                    type='password'
-                    placeholder='Enter Password'
-                    className={`w-96 p-2 px-3 text-black bg-white border-2 border-violet rounded-lg outline-none focus:border-ultramarine placeholder-blackOverlay`}
-                    required
-                />
-              </center>
-
-              <center className={`no-underline`}>
-                <Link
-                    to=''
-                    className={`mx-4 text-white hover:text-aqua duration-300`}
+    <div className='flex items-center min-h-screen bg-white'>
+      <div className='flex-1 h-full max-w-4xl mx-auto bg-purple-100 rounded-lg shadow-xl'>
+        <div className='flex flex-col md:flex-row'>
+          <div className='h-32 md:h-auto md:w-1/2'>
+            <img
+              className='object-cover w-full h-full'
+              src='https://images.unsplash.com/photo-1610397648930-477b8c7f0943?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8b3JjaGlkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
+              alt='img'
+            />
+          </div>
+          <div className='flex items-center justify-center p-6 sm:p-12 md:w-1/2'>
+            <form className='w-full' onSubmit={handleSubmit}>
+              <h1 className='mb-8 text-2xl font-bold text-center text-purple-700'>
+                Log In to Your Account
+              </h1>
+              <input
+                type='email'
+                className='w-full mb-8 px-4 py-2 text-sm border rounded-md focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-900'
+                placeholder='Email'
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                className='w-full px-4 py-2 text-sm border rounded-md focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-900'
+                placeholder='Password'
+                type='password'
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <p className='mt-4'>
+                <a
+                  className='text-md text-purple-900 hover:underline'
+                  href='./forgot-password.html'
                 >
-                  Forgot Password?
-                </Link>
-
-                <p className={`py-2 text-white`}>
+                  Forgot your password?
+                </a>
+              </p>
+              <Button
+                text='Log In'
+                type='button'
+                buttonStyle='square'
+                handleClick={() => console.log("Clicked!")}
+              />
+              <div
+                style={{
+                  borderTop: "1px solid #301934",
+                  marginTop: 30,
+                }}
+              ></div>
+              <div className='flex flex-col justify-center gap-4 mt-8'>
+                <button
+                  onClick={signInWithGoogle}
+                  className='p-4 w-full font-medium rounded-lg flex justify-center gap-2 border-2 border-purple-900 hover:bg-white hover:border-purple-500'
+                >
+                  <FcGoogle className='text-2xl text-purple-900' />
+                  Sign in with Google
+                </button>
+                <button
+                  onClick={signInWithFacebook}
+                  className='p-4 w-full font-medium rounded-lg flex justify-center gap-2 border-2 border-purple-900 hover:bg-white hover:border-purple-500'
+                >
+                  <AiFillFacebook className='text-facebook text-2xl' />
+                  Sign in with Facebook
+                </button>
+                <p className='py-2 text-sm text-purple-900 flex justify-center'>
                   Don't have an account yet?
                   <Link
-                      to='/register'
-                      className={`mx-4 text-black text-xl underline hover:text-aqua duration-300`}
+                    to='/register'
+                    className='mx-2 text-purple-900 text-sm hover:underline duration-300'
                   >
-                    Register
+                    Sign Up
                   </Link>
                 </p>
-              </center>
-
-              <center className={`my-6`}>
-                <Button
-                    text='Submit'
-                    type='button'
-                    buttonStyle='rounded'
-                    handleClick={() => console.log("Clicked!")}
-                />
-                {/* <button
-                                type='submit'
-                                className={`text-[24px] border-darkPurple border-2 bg-primaryPurple px-4 py-2 rounded-md hover:border-aqua hover:bg-teal hover:text-white duration-300`}
-                            >
-                                Submit
-                            </button> */}
-              </center>
+              </div>
             </form>
-
-            <div className={`flex flex-col justify-center gap-4 mt-10`}>
-              <button
-                  onClick={signInWithGoogle}
-                  className={`bg-gray-500 p-4 w-full font-medium rounded-lg flex align-middle gap-2 border-2 border-gray-700 shadow-inner shadow-md shadow-gray-700 hover:bg-gray-900 hover:border-gray-400 hover:shadow-md hover:shadow-gray-200 hover:shadow-inner`}
-              >
-                <FcGoogle className={`text-2xl`} />
-                Sign in with Google
-              </button>
-
-              <button
-                  onClick={signInWithFacebook}
-                  className={`bg-gray-500 p-4 w-full font-medium rounded-lg flex align-middle gap-2 border-2 border-gray-700 shadow-inner shadow-md shadow-gray-700 hover:bg-gray-900 hover:border-gray-400 hover:shadow-md hover:shadow-gray-200 hover:shadow-inner`}
-              >
-                <AiFillFacebook className={`text-facebook text-2xl`} />
-                Sign in with Facebook
-              </button>
-            </div>
           </div>
         </div>
       </div>
+    </div>
   );
 };
 
