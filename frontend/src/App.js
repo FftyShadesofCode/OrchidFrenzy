@@ -1,7 +1,9 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
 
-import Topnav from "./components/navigation/topnav";
+import React from "react"
+import { Routes, Route } from "react-router-dom"
+
+import Topnav from "./components/navigation/topnav"
+import Sidenav from './components/navigation/sidenav'
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Home from "./pages/Home";
