@@ -25,19 +25,19 @@ export default function RightBox({ showArrows, isActive, moveRight }) {
   }
 
   return (
-    <div
-      className={isActive.right ? 'right-box active' : 'right-box'}
-      onClick={isActive.right ? handleClick : null}
-    >
-      {
-        showArrows ?
-          <FiChevronsRight
-            fontSize='small'
-            className={clickEffect ? 'text-primaryPurple' : 'white'}
-          />
-          :
-          null
-      }
-    </div>
+      <div
+          className={isActive.right ? 'right-box active' : 'right-box'}
+          onClick={isActive.right ? handleClick : null}
+      >
+        {
+          showArrows ?
+              <FiChevronsRight
+                  fontSize='small'
+                  className={clickEffect ? 'text-primaryPurple' : 'white'}
+              />
+              :
+              null
+        }
+      </div>
   )
 }
