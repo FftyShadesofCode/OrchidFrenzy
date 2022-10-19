@@ -26,19 +26,19 @@ export default function LeftBox({ showArrows, isActive, moveLeft }) {
   }
 
   return (
-    <div
-      className={isActive.left ? 'left-box active' : 'left-box'}
-      onClick={isActive.left ? handleClick : null}
-    >
-      {
-        showArrows ?
-          <FiChevronsLeft
-            fontSize='small'
-            className={clickEffect ? 'text-primaryPurple' : 'white'}
-          />
-          :
-          null
-      }
-    </div>
+      <div
+          className={isActive.left ? 'left-box active' : 'left-box'}
+          onClick={isActive.left ? handleClick : null}
+      >
+        {
+          showArrows ?
+              <FiChevronsLeft
+                  fontSize='small'
+                  className={clickEffect ? 'text-primaryPurple' : 'white'}
+              />
+              :
+              null
+        }
+      </div>
   )
 }

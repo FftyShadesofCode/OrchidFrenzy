@@ -116,7 +116,7 @@ export default function Topnav() {
     }
 
     return (
-        <div className='wrapper'>
+        <div className='wrapper z-50'>
             <div className={`border-primaryPurple border-2 main-container`}>
                 <LeftBox
                     showArrows={showArrows}
