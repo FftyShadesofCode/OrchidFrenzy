@@ -83,14 +83,14 @@ const Login = () => {
                   className='p-4 w-full font-medium rounded-lg flex justify-center gap-2 border-2 border-purple-900 hover:bg-white hover:border-purple-500'
                 >
                   <FcGoogle className='text-2xl text-purple-900' />
-                  Sign in with Google
+                  Log In with Google
                 </button>
                 <button
                   onClick={signInWithFacebook}
                   className='p-4 w-full font-medium rounded-lg flex justify-center gap-2 border-2 border-purple-900 hover:bg-white hover:border-purple-500'
                 >
                   <AiFillFacebook className='text-facebook text-2xl' />
-                  Sign in with Facebook
+                  Log In with Facebook
                 </button>
                 <p className='py-2 text-sm text-purple-900 flex justify-center'>
                   Don't have an account yet?
