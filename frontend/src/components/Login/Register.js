@@ -30,13 +30,13 @@ const Register = () => {
   // Google Sign-In
 
   return (
-    <div className='flex items-center min-h-screen bg-white'>
-      <div className='flex-1 h-full max-w-4xl mx-auto bg-purple-100 rounded-lg shadow-xl'>
+    <div className='flex items-center h-full bg-white mt-10'>
+      <div className='flex-1 h-full max-w-5xl mx-auto bg-purple-100 rounded-lg shadow-xl'>
         <div className='flex flex-col md:flex-row'>
           <div className='h-32 md:h-auto md:w-1/2'>
             <img
               className='object-cover w-full h-full'
-              src='https://images.unsplash.com/photo-1516477266610-9e4c763da721?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG9yY2hpZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
+              src='https://images.unsplash.com/photo-1605996370592-b6f7a81e382e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8b3JjaGlkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
               alt='img'
             />
           </div>
@@ -63,8 +63,69 @@ const Register = () => {
                 type='password'
                 onChange={(e) => setPassword(e.target.value)}
               />
+              <div className='flex flex-wrap -mx-3 mb-2 mt-6'>
+                <div className='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
+                  <label
+                    className='block uppercase tracking-wide text-purple-900 text-xs font-bold mb-2'
+                    htmlFor='grid-city'
+                  >
+                    City
+                  </label>
+                  <input
+                    className='appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+                    id='grid-city'
+                    type='text'
+                    placeholder='City'
+                  />
+                </div>
+                <div className='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
+                  <label
+                    className='block uppercase tracking-wide text-purple-900 text-xs font-bold mb-2'
+                    htmlFor='grid-state'
+                  >
+                    State
+                  </label>
+                  <div className='relative'>
+                    <select
+                      className='block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+                      id='grid-state'
+                    >
+                      {States.map((state) => {
+                        return (
+                          <option key={state.id} value={state.name}>
+                            {state.name}
+                          </option>
+                        );
+                      })}
+                    </select>
+                    <div className='pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700'>
+                      <svg
+                        className='fill-current h-4 w-4'
+                        xmlns='http://www.w3.org/2000/svg'
+                        viewBox='0 0 20 20'
+                      >
+                        <path d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z' />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div className='w-full md:w-1/3 px-3 mb-6 md:mb-0'>
+                  <label
+                    className='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'
+                    htmlFor='grid-zip'
+                  >
+                    Zip
+                  </label>
+                  <input
+                    className='appearance-none block w-full bg-gray-200 text-purple-900 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+                    id='grid-zip'
+                    type='text'
+                    placeholder='Zip'
+                  />
+                </div>
+              </div>
               <Button
-                text='Log In'
+                text='Create Account'
                 type='button'
                 buttonStyle='square'
                 handleClick={() => console.log("Clicked!")}
