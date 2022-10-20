@@ -31,7 +31,7 @@ const Register = () => {
 
   return (
     <div className='flex items-center h-full bg-white mt-10'>
-      <div className='flex-1 h-full max-w-5xl mx-auto bg-purple-100 rounded-lg shadow-xl'>
+      <div className='flex-1h-full max-w-4xl mx-auto bg-purple-100 rounded-xl shadow-2xl'>
         <div className='flex flex-col md:flex-row'>
           <div className='h-32 md:h-auto md:w-1/2'>
             <img
@@ -41,7 +41,7 @@ const Register = () => {
             />
           </div>
           <div className='flex items-center justify-center p-6 sm:p-12 md:w-1/2'>
-            <form className='w-full' onSubmit={handleSubmit}>
+            <form className='w-full h-full' onSubmit={handleSubmit}>
               <h1 className='mb-8 text-2xl font-bold text-center text-purple-700'>
                 Create an Account
               </h1>

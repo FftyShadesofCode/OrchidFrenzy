@@ -30,8 +30,8 @@ const Login = () => {
   };
 
   return (
-    <div className='flex items-center min-h-screen bg-white'>
-      <div className='flex-1 h-full max-w-4xl mx-auto bg-purple-100 rounded-lg shadow-xl'>
+    <div className='flex items-center h-screen bg-white'>
+      <div className='flex-1h-full mx-auto bg-purple-100 rounded-xl shadow-2xl'>
         <div className='flex flex-col md:flex-row'>
           <div className='h-32 md:h-auto md:w-1/2'>
             <img
@@ -59,7 +59,7 @@ const Login = () => {
               />
               <p className='mt-4'>
                 <a
-                  className='text-md text-purple-900 hover:underline'
+                  className='text-sm text-purple-500 hover:underline'
                   href='./forgot-password.html'
                 >
                   Forgot your password?
