@@ -14,6 +14,7 @@ const App = () => {
     return (
         <div>
             <Topnav />
+            <Sidenav />
             <Routes>
                 <Route element={<Home />} path='/' exact />
                 <Route path='/login' element={<Login />} />
