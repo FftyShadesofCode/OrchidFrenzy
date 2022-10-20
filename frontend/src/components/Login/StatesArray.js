@@ -1,5 +1,9 @@
 const States = [
   {
+    id: 0,
+    name: "State",
+  },
+  {
     id: 1,
     name: "Alabama",
   },
