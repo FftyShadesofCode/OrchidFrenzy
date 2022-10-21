@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import Account from "../accounts/account";
-import { UserAuth } from "../../utils/AuthContext";
-import { signInWithGoogle, signInWithFacebook } from "../../utils/firebase";
+import 'firebase/app'
+
+import { auth, logInWithEmailAndPassword, signInWithGoogle, signInWithFacebook } from "../../utils/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
@@ -14,20 +16,15 @@ const Login = () => {
   // Email Sign-In
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [user, loading, error] = useState(auth)
   const navigate = useNavigate();
-  const { signIn } = UserAuth();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-    try {
-      await signIn(email, password);
-      navigate({ Account });
-    } catch (e) {
-      setError(e.message);
+  useEffect(() => {
+    if (loading) {
+      return
     }
-  };
+    if (user) navigate('/')
+  }, [user, loading])
 
   return (
       <div className='flex items-center h-screen bg-white'>
@@ -41,7 +38,7 @@ const Login = () => {
               />
             </div>
             <div className='flex items-center justify-center p-6 sm:p-12 md:w-1/2'>
-              <form className='w-full' onSubmit={handleSubmit}>
+              <form className='w-full' onSubmit={() => logInWithEmailAndPassword(email, password)}>
                 <h1 className='mb-8 text-2xl font-bold text-center text-purple-700'>
                   Log In to Your Account
                 </h1>
@@ -49,12 +46,14 @@ const Login = () => {
                     type='email'
                     className='w-full mb-8 px-4 py-2 text-sm border rounded-md focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-900'
                     placeholder='Email'
+                    value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <input
                     className='w-full px-4 py-2 text-sm border rounded-md focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-900'
                     placeholder='Password'
                     type='password'
+                    value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <p className='mt-4'>
@@ -69,7 +68,7 @@ const Login = () => {
                     text='Log In'
                     type='button'
                     buttonStyle='square'
-                    handleClick={() => console.log("Clicked!")}
+                    onClick={() => logInWithEmailAndPassword(email, password)}
                 />
                 <div
                     style={{

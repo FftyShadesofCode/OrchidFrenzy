@@ -1,5 +1,20 @@
 import React from "react";
 
+import {
+    FontAwesomeIcon
+} from '@fortawesome/react-fontawesome'
+import {
+    faChevronDown,
+    faChevronUp,
+    faInbox,
+    faEnvelopeOpenText,
+    faEnvelopeCircleCheck,
+    faStar,
+    faUserGroup,
+    faListCheck,
+    faComments
+} from '@fortawesome/free-solid-svg-icons'
+
 export const navLinks = [
     {
         "id": 1,
@@ -17,21 +32,6 @@ export const navLinks = [
         "path": "/resources"
     }
 ]
-
-import {
-    FontAwesomeIcon
-} from '@fortawesome/react-fontawesome'
-import {
-    faChevronDown,
-    faChevronUp,
-    faInbox,
-    faEnvelopeOpenText,
-    faEnvelopeCircleCheck,
-    faStar,
-    faUserGroup,
-    faListCheck,
-    faComments
-} from '@fortawesome/free-solid-svg-icons'
 
 export const sideMenuItems = [
     {
