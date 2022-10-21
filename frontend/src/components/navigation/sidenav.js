@@ -31,13 +31,13 @@ const Sidenav = () => {
                     <img
                         src={Logo}
                         alt=''
-                        className={`w-fit h-auto duration-500`}
+                        className={`w-64 w-full h-auto m-2 duration-500`}
                     />
                 ) :
                     <img
                         src={LogoText}
                         alt=''
-                        className={`w-fit h-auto duration-500`}
+                        className={`w-14 h-auto m-2 duration-500`}
                     />}
 
                 <div className="relative m-2">
