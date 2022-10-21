@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Home() {
     return (
-        <div className={`bg-3DCattleya bg-cover bg-center w-screen h-screen text-white`}>
+        <div className={`bg-3DCattleya bg-cover bg-no-repeat bg-center w-screen h-screen text-white`}>
             <div className={`bg-white/50 w-full h-screen flex items-center flex-col`}>
                 <div className={`flex justify-center content-center`}>
 
