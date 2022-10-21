@@ -28,6 +28,7 @@
 .main-container .items-container .movable-container {
   width: 600px;
   display: flex;
+  justify-content: space-evenly;
   transition: 300ms;
 }
 
@@ -43,7 +44,7 @@
   text-shadow: 1px 1px black;
   opacity: 0.75;
   cursor: pointer;
-  width: auto;
+  width: 125px;
   min-width: 125px;
   max-width: 125px;
   -webkit-tap-highlight-color: transparent;
