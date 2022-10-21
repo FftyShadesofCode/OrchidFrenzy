@@ -73,7 +73,8 @@ module.exports = {
         cattOverlay: 'rgba(255, 255, 253, 0.5)'
       },
       backgroundImage: {
-        'cTenebrosa': "url('./assets/Cattleyatenebrosa.jpg')"
+        'cTenebrosa': "url('./assets/Cattleyatenebrosa.jpg')",
+        '3DCattleya': "url('./assets/3DOrchid.png')"
       },
       keyframes: {
         'slide-in': {
