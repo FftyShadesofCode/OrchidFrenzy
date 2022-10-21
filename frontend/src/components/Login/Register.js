@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../utils/AuthContext";
-import { signInWithGoogle, signInWithFacebook } from "../../utils/firebase";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 import Account from "../accounts/account";
