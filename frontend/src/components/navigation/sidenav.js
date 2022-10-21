@@ -21,19 +21,19 @@ const Sidenav = () => {
     }
 
     return (
-        <div className={`transition-all duration-500 fixed right-0 mr-[25px] m-4 rounded-2xl border-2 border-primaryPurple border-md bg-gradient-to-tl from-darkPurple to-teal text-white h-[88vh] top-16 ${showSidebar ? 'w-72' : 'w-20'}`}>
+        <div className={`transition-all duration-500 fixed right-0 mr-[25px] m-4 rounded-2xl border-2 border-primaryPurple border-md bg-gradient-to-tl from-darkPurple to-teal text-white h-[88vh] ${showSidebar ? 'w-72' : 'w-20'}`}>
             <button className={`flex gap-x-4 w-10 h-10 items-center`} onClick={toggleSidebar} >
                 <FontAwesomeIcon icon={faAnglesLeft} className={`absolute cursor-pointer right-4 top-3 w-7 h-auto text-white duration-500 ${showSidebar && 'rotate-180'}`} />
             </button>
             <div className={`relative duration-300`}>
                 {showSidebar ? (
 
-                    <img
-                        src={Logo}
-                        alt=''
-                        className={`w-64 w-full h-auto m-2 duration-500`}
-                    />
-                ) :
+                        <img
+                            src={Logo}
+                            alt=''
+                            className={`w-64 w-full h-auto m-2 duration-500`}
+                        />
+                    ) :
                     <img
                         src={LogoText}
                         alt=''
