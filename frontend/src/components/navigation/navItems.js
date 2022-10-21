@@ -45,19 +45,19 @@ export const sideMenuItems = [
             {
                 "id": 1,
                 "label": "Inbox",
-                "path": "/inbox",
+                "path": "/messaging/inbox",
                 "icon": faEnvelopeOpenText,
             },
             {
                 "id": 2,
                 "label": "Sent",
-                "path": "/sent",
+                "path": "/messaging/sent",
                 "icon": faEnvelopeCircleCheck,
             },
             {
                 "id": 3,
                 "label": "Favorites",
-                "path": "/favorites",
+                "path": "/messaging/favorites",
                 "icon": faStar,
             }
         ]
