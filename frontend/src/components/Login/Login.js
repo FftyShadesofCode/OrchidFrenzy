@@ -30,6 +30,7 @@ const Login = () => {
   };
 
   return (
+
     <div className='flex items-center h-screen bg-white'>
       <div className='flex-1h-full mx-auto bg-purple-100 rounded-xl shadow-2xl'>
         <div className='flex flex-col md:flex-row'>
@@ -98,15 +99,51 @@ const Login = () => {
                     to='/register'
                     className='mx-2 text-purple-900 text-sm hover:underline duration-300'
                   >
-                    Sign Up
-                  </Link>
+                    Forgot your password?
+                  </a>
                 </p>
-              </div>
-            </form>
+                <Button
+                    text='Log In'
+                    type='button'
+                    buttonStyle='square'
+                    handleClick={() => console.log("Clicked!")}
+                />
+                <div
+                    style={{
+                      borderTop: "1px solid #301934",
+                      marginTop: 30,
+                    }}
+                ></div>
+                <div className='flex flex-col justify-center gap-4 mt-8'>
+                  <button
+                      onClick={signInWithGoogle}
+                      className='p-4 w-full font-medium rounded-lg flex justify-center gap-2 border-2 border-purple-900 hover:bg-white hover:border-purple-500'
+                  >
+                    <FcGoogle className='text-2xl text-purple-900' />
+                    Log In with Google
+                  </button>
+                  <button
+                      onClick={signInWithFacebook}
+                      className='p-4 w-full font-medium rounded-lg flex justify-center gap-2 border-2 border-purple-900 hover:bg-white hover:border-purple-500'
+                  >
+                    <AiFillFacebook className='text-facebook text-2xl' />
+                    Log In with Facebook
+                  </button>
+                  <p className='py-2 text-sm text-purple-900 flex justify-center'>
+                    Don't have an account yet?
+                    <Link
+                        to='/register'
+                        className='mx-2 text-purple-900 text-sm hover:underline duration-300'
+                    >
+                      Sign Up
+                    </Link>
+                  </p>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
