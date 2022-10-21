@@ -26,7 +26,7 @@ const App = () => {
         <Route path='/login' element={<Login />} />
         <Route element={<Register />} path='/register' />
 
-        // Sidebar Routes
+          {/* Sidebar Routes */}
           <Route path='/messaging' element={<Messaging />} />
           <Route path='/messaging/inbox' element={<Inbox />} />
           <Route path='/messaging/sent' element={<Sent />} />
