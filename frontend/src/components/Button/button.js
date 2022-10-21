@@ -8,7 +8,7 @@ const Button = ({ buttonStyle, type, text, onClick }) => {
   const disabledButton =
     "bg-blue-500 text-white font-bold py-2 px-4 rounded opacity-50 cursor-not-allowed";
   const squareButton =
-    "bg-purple-900 hover:bg-purple-600 text-white font-semi-bold mt-6 py-2 px-4 rounded-md w-full";
+    "bg-purple-900 hover:bg-purple-600 text-white font-semi-bold mt-6 py-2 px-4 rounded-md w-full h-[3.5rem]";
 
   //   const handleClick = () => console.log("Clicked!");
 
