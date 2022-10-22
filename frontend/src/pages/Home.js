@@ -3,9 +3,9 @@ import React from "react";
 export default function Home() {
   return (
     <div
-      className={`bg-3DCattleya bg-cover bg-no-repeat bg-center w-screen h-screen text-white`}
+      className={`bg-accent3 bg-contain bg-repeat-round bg-left w-screen h-screen text-white`}
     >
-      <div className={`bg-white/50 w-full h-screen flex items-center flex-col`}>
+      <div className={`bg-white/60 w-full h-screen flex items-center flex-col`}>
         <div className={`flex justify-center content-center`}>
           <h1
             className={`text-black text-6xl mt-52 mb-10 text-center uppercase`}
