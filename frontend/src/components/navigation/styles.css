@@ -32,7 +32,7 @@
   transition: 300ms;
 }
 
-.main-container .items-container .movable-container>div {
+.main-container .items-container .movable-container>a {
   position: relative;
   height: 50px;
   text-align: center;
