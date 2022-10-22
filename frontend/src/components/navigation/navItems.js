@@ -54,12 +54,12 @@ export const sideMenuItems = [
                 "path": "/messaging/sent",
                 "icon": faEnvelopeCircleCheck,
             },
-            {
-                "id": 3,
-                "label": "Favorites",
-                "path": "/messaging/favorites",
-                "icon": faStar,
-            }
+            // {
+            //     "id": 3,
+            //     "label": "Favorites",
+            //     "path": "/messaging/favorites",
+            //     "icon": faStar,
+            // }
         ]
     },
     {

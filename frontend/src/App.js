@@ -6,6 +6,8 @@ import Sidenav from "./components/navigation/sidenav";
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Home from "./pages/Home";
+import Gallery from "./pages/Gallery/Gallery";
+import Resources from './pages/Resources/Resources'
 import Messaging from './pages/Messaging/messaging';
 import Inbox from './pages/Messaging/Inbox';
 import Favorites from "./pages/Messaging/Favorites";
@@ -22,7 +24,12 @@ const App = () => {
       <Topnav />
       <Sidenav />
       <Routes>
+          {/* TopNav Routes */}
         <Route element={<Home />} path='/' exact />
+        <Route element={<Gallery />} path='/gallery' exact />
+        <Route element={<Resources />} path='/resources' exact />
+
+          {/* Authorization Routes */}
         <Route path='/login' element={<Login />} />
         <Route element={<Register />} path='/register' />
 
