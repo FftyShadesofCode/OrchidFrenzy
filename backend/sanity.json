@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "Orchid Frenzy"
+    "name": "Orchid FriendZ"
   },
   "api": {
-    "projectId": "407r1ew9",
+    "projectId": "fhy0l78o",
     "dataset": "production"
   },
   "plugins": [
