@@ -15,7 +15,7 @@ export default function Topnav() {
     const [translationWidth, setTranslationWidth] = useState(0)
     const [isActive, setIsActive] = useState({ left: false, right: false })
     const [hiddenItems, setHiddenItems] = useState({ left: 0, right: 0 })
-    const links = ['Home', 'Galleries', 'Resources']
+    const links = ['home', 'galleries', 'resources']
 
     useEffect(() => {
         // reset the translation on the X axis
