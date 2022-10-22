@@ -28,12 +28,12 @@ const Sidenav = () => {
             <div className={`relative duration-300`}>
                 {showSidebar ? (
 
-                    <img
-                        src={Logo}
-                        alt=''
-                        className={`w-64 w-full h-auto m-2 duration-500`}
-                    />
-                ) :
+                        <img
+                            src={Logo}
+                            alt=''
+                            className={`w-64 w-full h-auto m-2 duration-500`}
+                        />
+                    ) :
                     <img
                         src={LogoText}
                         alt=''

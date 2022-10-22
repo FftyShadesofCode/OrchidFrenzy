@@ -1,5 +1,3 @@
-To install both frontend end, from parent folder, run an installation for the parallel script, and then run script 
-'inst'.
-To run both 
-frontend and backend, run script 
-'start'
+To install frontend, backend, and userauth, from parent folder, run `npm i npm-run-all` script, and then run script 
+`iall`.
+To run both frontend, backend, and userauth, run script `start`.
